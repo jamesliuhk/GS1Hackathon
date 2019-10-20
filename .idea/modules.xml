@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidStudioWorkSpace-GS1Hackathon.iml" filepath="$PROJECT_DIR$/AndroidStudioWorkSpace-GS1Hackathon.iml" />
       <module fileurl="file://$PROJECT_DIR$/GS1Hackathon.iml" filepath="$PROJECT_DIR$/GS1Hackathon.iml" />
-      <module fileurl="file://$PROJECT_DIR$/YZxing-lib/GS1Hackathon-YZxing-lib.iml" filepath="$PROJECT_DIR$/YZxing-lib/GS1Hackathon-YZxing-lib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/GS1Hackathon-app.iml" filepath="$PROJECT_DIR$/app/GS1Hackathon-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GS1HackathonF1.iml" filepath="$PROJECT_DIR$/GS1HackathonF1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YZxing-lib/GS1HackathonF1-YZxing-lib.iml" filepath="$PROJECT_DIR$/YZxing-lib/GS1HackathonF1-YZxing-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/GS1HackathonF1-app.iml" filepath="$PROJECT_DIR$/app/GS1HackathonF1-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/YZxing-lib/YZxing-lib.iml" filepath="$PROJECT_DIR$/YZxing-lib/YZxing-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
