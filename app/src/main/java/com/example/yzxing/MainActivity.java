@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
 //                , BarcodeFormat.CODE_128
 //                , BarcodeFormat.CODE_93 );
 //        mHashMap.put(ScannerActivity.BARCODE_FORMAT, codeFormats);
+
+        DatabaseHelper helper = new DatabaseHelper(this);
+        helper.getWritableDatabase();
     }
 
     private View.OnClickListener mScannerListener = new View.OnClickListener() {
