@@ -22,6 +22,8 @@ public class MainActivity_Producer_Confirm extends AppCompatActivity {
         Intent fromProducer = getIntent();
 
 
+
+
         //Todo: connect to ListView, set textView
 
         //jump to GenerateCode page
@@ -30,7 +32,8 @@ public class MainActivity_Producer_Confirm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer_Confirm.this, MainActivity_Producer_GenerateCode.class);
 
-                //Todo: send data to AddDetail Page(Detail, previous data/barcode)
+
+                //Todo: you can send data to Generator at here
 
                 startActivity(intentJumpToProducer);
             }

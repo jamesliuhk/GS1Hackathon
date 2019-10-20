@@ -24,11 +24,18 @@ public class MainActivity_Producer extends AppCompatActivity {
     private final int REQUEST_PERMISION_CODE_CAMARE = 0;
     private final int RESULT_REQUEST_CODE = 1;
     private static final String TAG = "MainActivity_Customer";
-    ArrayList<String > codeList;
-    ListView listView;
-    MyAdapter myAdapter;
-    Button generate, addSupplier, addDetail;
 
+    private Button generate, addSupplier, addDetail;
+
+    //String from activity "AddDetail"
+    private String addedDetail;
+
+    //codeLise store all BarCode we scanned.
+    private ArrayList<String > codeList;
+
+    //save for future use, you can use myAdapter and listView to print any array on screen
+    private ListView listView;
+    private MyAdapter myAdapter;
 
 
     @Override
@@ -48,15 +55,18 @@ public class MainActivity_Producer extends AppCompatActivity {
 
         // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
+        addedDetail=fromChooseModePage.getStringExtra("Detail");
+
+
 
         //jump to AddDetail page
-        //Todo: wrong method, should use View.OnClickListener!!!!!!!!!!!!!!
+        //Done: wrong method, should use View.OnClickListener!!!!!!!!!!!!!!
         addDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_AddDetail.class);
 
-                //Todo: receive addDetail data from page AddDetail and process it, this
+                //Done: receive addDetail data from page AddDetail and process it, this
 
                 startActivity(intentJumpToProducer);
             }
