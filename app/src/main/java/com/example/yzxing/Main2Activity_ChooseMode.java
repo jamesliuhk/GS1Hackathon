@@ -25,6 +25,9 @@ public class Main2Activity_ChooseMode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentJumpToCustomer = new Intent(Main2Activity_ChooseMode.this, MainActivity_Customer.class);
+
+                //Todo: you can send date to another activity at here
+
                 startActivity(intentJumpToCustomer);
             }
         });
@@ -35,6 +38,9 @@ public class Main2Activity_ChooseMode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(Main2Activity_ChooseMode.this, MainActivity_Producer.class);
+
+                //Todo: you can send date to another activity at here
+
                 startActivity(intentJumpToProducer);
             }
         });

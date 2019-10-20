@@ -20,6 +20,8 @@ public class MainActivity_Producer_Confirm extends AppCompatActivity {
 
         // from Producer to here
         Intent fromProducer = getIntent();
+        //Todo: you can get date form previous activity at here
+
 
 
         //Todo: connect to ListView, set textView
@@ -30,7 +32,8 @@ public class MainActivity_Producer_Confirm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer_Confirm.this, MainActivity_Producer_GenerateCode.class);
 
-                //Todo: send data to AddDetail Page(Detail, previous data/barcode)
+
+                //Todo: you can send data to Generator at here
 
                 startActivity(intentJumpToProducer);
             }

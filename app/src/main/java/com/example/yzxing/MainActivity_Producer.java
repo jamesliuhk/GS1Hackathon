@@ -24,11 +24,18 @@ public class MainActivity_Producer extends AppCompatActivity {
     private final int REQUEST_PERMISION_CODE_CAMARE = 0;
     private final int RESULT_REQUEST_CODE = 1;
     private static final String TAG = "MainActivity_Customer";
-    ArrayList<String > codeList;
-    ListView listView;
-    MyAdapter myAdapter;
-    Button generate, addSupplier, addDetail;
 
+    private Button generate, addSupplier, addDetail;
+
+    //!!!String from activity "AddDetail"
+    private String addedDetail;
+
+    //!!!codeLise store all BarCode we scanned.
+    private ArrayList<String > codeList;
+
+    //!!!save for future use, you can use myAdapter and listView to print any array on screen
+    private ListView listView;
+    private MyAdapter myAdapter;
 
 
     @Override
@@ -48,15 +55,20 @@ public class MainActivity_Producer extends AppCompatActivity {
 
         // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
+        addedDetail=fromChooseModePage.getStringExtra("Detail");
+        //Todo: you can get date form previous activity at here
+
+
 
         //jump to AddDetail page
-        //Todo: wrong method, should use View.OnClickListener!!!!!!!!!!!!!!
+        //Done: wrong method, should use View.OnClickListener!!!!!!!!!!!!!!
         addDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_AddDetail.class);
 
-                //Todo: receive addDetail data from page AddDetail and process it, this
+                //Done: receive addDetail data from page AddDetail and process it, this
+                //Todo: you can send date to another activity at here
 
                 startActivity(intentJumpToProducer);
             }
@@ -64,13 +76,14 @@ public class MainActivity_Producer extends AppCompatActivity {
 
 
 
-        //jump to Confirm page
+        //!!!jump to Confirm page
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_Confirm.class);
 
                 //Todo: send data to Confirm Page(Detail, previous data/barcode)
+                //Todo: you can send date to another activity at here
 
                 startActivity(intentJumpToProducer);
             }
@@ -92,19 +105,9 @@ public class MainActivity_Producer extends AppCompatActivity {
 
     private void goScanner() {
         Intent intent = new Intent(this, ScannerActivity.class);
-        //这里可以用intent传递一些参数，比如扫码聚焦框尺寸大小，支持的扫码类型。
-//        //设置扫码框的宽
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_WIDTH, 400);
-//        //设置扫码框的高
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_HEIGHT, 400);
-//        //设置扫码框距顶部的位置
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_TOP_PADDING, 100);
-//        //设置是否启用从相册获取二维码。
+
         intent.putExtra(Constant.EXTRA_IS_ENABLE_SCAN_FROM_PIC,true);
-//        Bundle bundle = new Bundle();
-//        //设置支持的扫码类型
-//        bundle.putSerializable(Constant.EXTRA_SCAN_CODE_TYPE, mHashMap);
-//        intent.putExtras(bundle);
+
         startActivityForResult(intent, RESULT_REQUEST_CODE);
     }
 

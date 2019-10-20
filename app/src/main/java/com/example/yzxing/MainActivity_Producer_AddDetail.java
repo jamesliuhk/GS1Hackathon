@@ -5,10 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity_Producer_AddDetail extends AppCompatActivity {
 
-    Button add;
+    private Button add;
+    private EditText editText;
+
+    private  String detail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +23,21 @@ public class MainActivity_Producer_AddDetail extends AppCompatActivity {
         //connect buttons
         add = findViewById(R.id.add);
 
-        //back to Producer page
-        //Todo: Wrong!!!!!!!!!!!!
+        //connect editText and get String
+        editText = findViewById(R.id.editText);
+
+
+
+
+
+        //back to Producer page and send "Detail" we input
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer_AddDetail.this, MainActivity_Producer.class);
 
-                //Todo: send data to AddDetail Page(Detail, previous data/barcode)
+                intentJumpToProducer.putExtra("Detail",editText.getText().toString());
 
                 startActivity(intentJumpToProducer);
             }
@@ -34,8 +46,8 @@ public class MainActivity_Producer_AddDetail extends AppCompatActivity {
 
         // from Producer to here
         Intent fromProducer = getIntent();
+        //Todo: you can get date form previous activity at here
 
-        //Todo: Get data from "add" and return to Producer
 
 
     }
