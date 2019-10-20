@@ -20,11 +20,11 @@ import com.example.qrcode.ScannerActivity;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_Customer extends AppCompatActivity {
 
     private final int REQUEST_PERMISION_CODE_CAMARE = 0;
     private final int RESULT_REQUEST_CODE = 1;
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MainActivity_Customer";
     ArrayList<String > codeList;
     TextView textView;
     ListView listView;
@@ -35,23 +35,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        Button mScanner = (Button) findViewById(R.id.scanner);
 
         codeList = new ArrayList<>();
-        //codeList.add("123");
-
-        setContentView(R.layout.activity_main);
-        Button mScanner = (Button) findViewById(R.id.scanner);
         mScanner.setOnClickListener(mScannerListener);
-        //textView = findViewById(R.id.textView2);
+
+        // from ChooseModePage to here
+        Intent fromChooseModePage = getIntent();
 
 
-
-
-        //textView.setText("222");
-
-
-
-        myAdapter = new MyAdapter(MainActivity.this, codeList);
+        myAdapter = new MyAdapter(MainActivity_Customer.this, codeList);
         //绑定listView控件
         listView = (ListView)findViewById(R.id.codeList);
         //绑定自定义适配器到listView
@@ -71,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener mScannerListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(MainActivity_Customer.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                 goScanner();
             } else {
-                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_PERMISION_CODE_CAMARE);
+                ActivityCompat.requestPermissions(MainActivity_Customer.this, new String[]{Manifest.permission.CAMERA}, REQUEST_PERMISION_CODE_CAMARE);
             }
         }
     };
@@ -126,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     listView.setAdapter(myAdapter);
 
 
-                    Toast.makeText(MainActivity.this, "codeType:" + type
+                    Toast.makeText(MainActivity_Customer.this, "codeType:" + type
                             + "-----content:" + content, Toast.LENGTH_SHORT).show();
                     break;
                 default:
