@@ -30,11 +30,11 @@
           <item index="3" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
           <item index="4" class="java.lang.String" itemvalue="androidx.annotation.NonNull" />
           <item index="5" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
-          <item index="6" class="java.lang.String" itemvalue="android.annotation.NonNull" />
-          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
-          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
-          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
-          <item index="10" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="6" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
+          <item index="9" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="10" class="java.lang.String" itemvalue="android.annotation.NonNull" />
         </list>
       </value>
     </option>
