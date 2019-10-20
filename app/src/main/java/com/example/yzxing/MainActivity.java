@@ -10,10 +10,14 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.qrcode.Constant;
 import com.example.qrcode.ScannerActivity;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,15 +25,42 @@ public class MainActivity extends AppCompatActivity {
     private final int REQUEST_PERMISION_CODE_CAMARE = 0;
     private final int RESULT_REQUEST_CODE = 1;
     private static final String TAG = "MainActivity";
+    ArrayList<String > codeList;
+    TextView textView;
+    ListView listView;
+    MyAdapter myAdapter;
 
 //    private HashMap<String, Set> mHashMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        codeList = new ArrayList<>();
+        //codeList.add("123");
+
         setContentView(R.layout.activity_main);
         Button mScanner = (Button) findViewById(R.id.scanner);
         mScanner.setOnClickListener(mScannerListener);
+        //textView = findViewById(R.id.textView2);
+
+
+
+
+        //textView.setText("222");
+
+
+
+        myAdapter = new MyAdapter(MainActivity.this, codeList);
+        //绑定listView控件
+        listView = (ListView)findViewById(R.id.codeList);
+        //绑定自定义适配器到listView
+        listView.setAdapter(myAdapter);
+
+
+
+
+        //textView.setText("222");
 
 //        Set<BarcodeFormat> codeFormats = EnumSet.of(BarcodeFormat.QR_CODE
 //                , BarcodeFormat.CODE_128
@@ -89,6 +120,12 @@ public class MainActivity extends AppCompatActivity {
                     if (data == null) return;
                     String type = data.getStringExtra(Constant.EXTRA_RESULT_CODE_TYPE);
                     String content = data.getStringExtra(Constant.EXTRA_RESULT_CONTENT);
+
+                    codeList.add(content);
+                    //textView.setText(content);
+                    listView.setAdapter(myAdapter);
+
+
                     Toast.makeText(MainActivity.this, "codeType:" + type
                             + "-----content:" + content, Toast.LENGTH_SHORT).show();
                     break;
