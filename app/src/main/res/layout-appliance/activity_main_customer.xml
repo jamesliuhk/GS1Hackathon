@@ -1,37 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/scannerable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="scannerable"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732" />
+    android:layout_height="match_parent"
+    tools:context="com.example.yzxing.MainActivity_Customer">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/empty" />
 
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="127dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="44dp"
+        android:text="confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.979" />
+
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="233dp"
-        android:layout_height="273dp"
-        android:background="@color/scan_view_tip_color"
-        android:text="TextView"
-        android:textColor="#000000"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="97dp" />
+        android:id="@+id/infomationreview"
+        android:layout_width="302dp"
+        android:layout_height="226dp"
+        android:background="#EAEEF1"
+        android:shadowColor="#00BCD4"
+        android:text="InfomationReview"
+        android:textColor="#0C0B0B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="300dp"
+        android:layout_height="129dp"
+        android:background="#EDF5F8"
+        android:text="CheckedTextView"
+        android:textColorHighlight="#00DB9D9D"
+        app:layout_constraintBottom_toTopOf="@+id/infomationreview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89" />
 
 </android.support.constraint.ConstraintLayout>
