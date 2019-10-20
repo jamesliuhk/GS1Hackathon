@@ -56,6 +56,7 @@ public class MainActivity_Producer extends AppCompatActivity {
         // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
         addedDetail=fromChooseModePage.getStringExtra("Detail");
+        //Todo: you can get date form previous activity at here
 
 
 
@@ -67,6 +68,7 @@ public class MainActivity_Producer extends AppCompatActivity {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_AddDetail.class);
 
                 //Done: receive addDetail data from page AddDetail and process it, this
+                //Todo: you can send date to another activity at here
 
                 startActivity(intentJumpToProducer);
             }
@@ -81,6 +83,7 @@ public class MainActivity_Producer extends AppCompatActivity {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_Confirm.class);
 
                 //Todo: send data to Confirm Page(Detail, previous data/barcode)
+                //Todo: you can send date to another activity at here
 
                 startActivity(intentJumpToProducer);
             }

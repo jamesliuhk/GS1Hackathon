@@ -43,6 +43,7 @@ public class MainActivity_Customer extends AppCompatActivity {
 
         // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
+        //Todo: you can get date form previous activity at here
 
 
         myAdapter = new MyAdapter(MainActivity_Customer.this, codeList);

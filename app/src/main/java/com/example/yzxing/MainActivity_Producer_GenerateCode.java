@@ -13,6 +13,7 @@ public class MainActivity_Producer_GenerateCode extends AppCompatActivity {
 
         // from Producer to here
         Intent fromConfirm = getIntent();
+        //Todo: you can get date form previous activity at here
 
 
     }

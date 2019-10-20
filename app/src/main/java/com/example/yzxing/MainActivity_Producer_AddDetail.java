@@ -46,6 +46,7 @@ public class MainActivity_Producer_AddDetail extends AppCompatActivity {
 
         // from Producer to here
         Intent fromProducer = getIntent();
+        //Todo: you can get date form previous activity at here
 
 
 
