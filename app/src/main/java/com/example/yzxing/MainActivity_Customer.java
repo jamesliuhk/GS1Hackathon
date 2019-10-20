@@ -26,11 +26,9 @@ public class MainActivity_Customer extends AppCompatActivity {
     private final int RESULT_REQUEST_CODE = 1;
     private static final String TAG = "MainActivity_Customer";
     ArrayList<String > codeList;
-    TextView textView;
     ListView listView;
     MyAdapter myAdapter;
 
-//    private HashMap<String, Set> mHashMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +51,6 @@ public class MainActivity_Customer extends AppCompatActivity {
         //绑定自定义适配器到listView
         listView.setAdapter(myAdapter);
 
-
-
-
-        //textView.setText("222");
-
-//        Set<BarcodeFormat> codeFormats = EnumSet.of(BarcodeFormat.QR_CODE
-//                , BarcodeFormat.CODE_128
-//                , BarcodeFormat.CODE_93 );
-//        mHashMap.put(ScannerActivity.BARCODE_FORMAT, codeFormats);
     }
 
     private View.OnClickListener mScannerListener = new View.OnClickListener() {
@@ -77,19 +66,8 @@ public class MainActivity_Customer extends AppCompatActivity {
 
     private void goScanner() {
         Intent intent = new Intent(this, ScannerActivity.class);
-        //这里可以用intent传递一些参数，比如扫码聚焦框尺寸大小，支持的扫码类型。
-//        //设置扫码框的宽
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_WIDTH, 400);
-//        //设置扫码框的高
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_HEIGHT, 400);
-//        //设置扫码框距顶部的位置
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_TOP_PADDING, 100);
-//        //设置是否启用从相册获取二维码。
+
         intent.putExtra(Constant.EXTRA_IS_ENABLE_SCAN_FROM_PIC,true);
-//        Bundle bundle = new Bundle();
-//        //设置支持的扫码类型
-//        bundle.putSerializable(Constant.EXTRA_SCAN_CODE_TYPE, mHashMap);
-//        intent.putExtras(bundle);
         startActivityForResult(intent, RESULT_REQUEST_CODE);
     }
 

@@ -27,13 +27,13 @@ public class MainActivity_Producer extends AppCompatActivity {
 
     private Button generate, addSupplier, addDetail;
 
-    //String from activity "AddDetail"
+    //!!!String from activity "AddDetail"
     private String addedDetail;
 
-    //codeLise store all BarCode we scanned.
+    //!!!codeLise store all BarCode we scanned.
     private ArrayList<String > codeList;
 
-    //save for future use, you can use myAdapter and listView to print any array on screen
+    //!!!save for future use, you can use myAdapter and listView to print any array on screen
     private ListView listView;
     private MyAdapter myAdapter;
 
@@ -74,7 +74,7 @@ public class MainActivity_Producer extends AppCompatActivity {
 
 
 
-        //jump to Confirm page
+        //!!!jump to Confirm page
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,19 +102,9 @@ public class MainActivity_Producer extends AppCompatActivity {
 
     private void goScanner() {
         Intent intent = new Intent(this, ScannerActivity.class);
-        //这里可以用intent传递一些参数，比如扫码聚焦框尺寸大小，支持的扫码类型。
-//        //设置扫码框的宽
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_WIDTH, 400);
-//        //设置扫码框的高
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_HEIGHT, 400);
-//        //设置扫码框距顶部的位置
-//        intent.putExtra(Constant.EXTRA_SCANNER_FRAME_TOP_PADDING, 100);
-//        //设置是否启用从相册获取二维码。
+
         intent.putExtra(Constant.EXTRA_IS_ENABLE_SCAN_FROM_PIC,true);
-//        Bundle bundle = new Bundle();
-//        //设置支持的扫码类型
-//        bundle.putSerializable(Constant.EXTRA_SCAN_CODE_TYPE, mHashMap);
-//        intent.putExtras(bundle);
+
         startActivityForResult(intent, RESULT_REQUEST_CODE);
     }
 
