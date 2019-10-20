@@ -1,5 +1,6 @@
 package com.example.yzxing;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -17,31 +18,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.v(TAG, "create Database------------->");
-        String createSQL = "CREATE TABLE company (\n" +
-                "  barcode VARCHAR(45) NOT NULL,\n" +
+        String createSQL1 = "CREATE TABLE companies (\n" +
+                "  barcode VARCHAR(100) NOT NULL,\n" +
                 "  company VARCHAR(100) NOT NULL,\n" +
                 "  PRIMARY KEY (barcode))";
 
-        db.execSQL(createSQL);
+        String createSQL2 = "CREATE TABLE oreo (\n" +
+                "  barcode VARCHAR(100) NOT NULL,\n" +
+                "  data VARCHAR(200),\n" +
+                "  supplier VARCHAR(200),\n" +
+                "  PRIMARY KEY (barcode))";
 
-
-        Log.v(TAG, "update Database------------->");
-        this.getWritableDatabase().insert();
-        db.execSQL("INSERT INTO company (barcode, company) VALUES ('0496580', 'CokeCola')");
-        db.execSQL("INSERT INTO company (barcode, company) VALUES ('0496581', 'CokeCole')");
-        Cursor cursor = this.getReadableDatabase().query("company", new String[]{"barcode","company"}, "barcode = ?", new String[]{"0496580"}, null, null, null);
-        String name = cursor.getString(cursor.getColumnIndex("barcode"));
-        Log.v(TAG, name);
+        db.execSQL(createSQL1);
+        db.execSQL(createSQL2);
+        ContentValues values = new ContentValues();
+        values.put("barcode", "0467589");
+        values.put("company", "oreo");
+        db.insert("companies", null, values);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        switch (oldVersion) {
-            case 1:
-                break;
 
-            default:
-                break;
-        }
     }
 }
