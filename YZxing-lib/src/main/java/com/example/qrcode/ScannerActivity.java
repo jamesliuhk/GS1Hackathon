@@ -214,7 +214,7 @@ public class ScannerActivity extends AppCompatActivity implements SurfaceHolder.
 
     private void initView() {
         mToolBar = (Toolbar) findViewById(R.id.tool_bar);
-        mToolBar.setTitle("二维码/条形码");
+        mToolBar.setTitle("BarCode");
         mToolBar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolBar);
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
