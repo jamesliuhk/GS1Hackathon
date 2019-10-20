@@ -49,6 +49,32 @@ public class MainActivity_Producer extends AppCompatActivity {
         // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
 
+        //jump to AddDetail page
+        //Todo: wrong method, should use View.OnClickListener!!!!!!!!!!!!!!
+        addDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_AddDetail.class);
+
+                //Todo: receive addDetail data from page AddDetail and process it, this
+
+                startActivity(intentJumpToProducer);
+            }
+        });
+
+
+
+        //jump to Confirm page
+        generate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentJumpToProducer = new Intent(MainActivity_Producer.this, MainActivity_Producer_Confirm.class);
+
+                //Todo: send data to Confirm Page(Detail, previous data/barcode)
+
+                startActivity(intentJumpToProducer);
+            }
+        });
 
 
     }
