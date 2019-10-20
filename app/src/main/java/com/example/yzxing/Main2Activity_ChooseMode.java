@@ -30,14 +30,14 @@ public class Main2Activity_ChooseMode extends AppCompatActivity {
         });
 
         //jump to producer page
-        /**
+
         producerMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentJumpToProducer = new Intent(Main2Activity_ChooseMode.this, Main2Activity_Producer.class);
+                Intent intentJumpToProducer = new Intent(Main2Activity_ChooseMode.this, MainActivity_Producer.class);
                 startActivity(intentJumpToProducer);
             }
-        });*/
+        });
 
 
 

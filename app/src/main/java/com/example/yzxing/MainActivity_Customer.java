@@ -43,6 +43,7 @@ public class MainActivity_Customer extends AppCompatActivity {
         codeList = new ArrayList<>();
         mScanner.setOnClickListener(mScannerListener);
 
+        // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
 
 
