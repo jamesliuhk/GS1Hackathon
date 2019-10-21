@@ -84,6 +84,7 @@ public class MainActivity_Producer extends AppCompatActivity {
 //            upList.remove(upList.get(upList.size() - 1));
             ArrayList<String> code1List = new ArrayList<>();
             code1List.add(lastCode);
+            code1List.add("0110100169420200101905182117053019");
             db.insertBarcode("0110028028009000131905151035467121808", code1List, detailList);
             Log.v(TAG, db.getTrace("0110028028009000131905151035467121808")[0].toString() + "????" + db.getTrace("0110028028009000131905151035467121808")[1].toString());
 
@@ -91,7 +92,7 @@ public class MainActivity_Producer extends AppCompatActivity {
             for (String s : code1List){
                 Cursor cursor = db.db.query("companies", new String[]{"barcode", "company"}, "barcode = ?", new String[]{s.substring(3, 10)}, null, null, null);
                 if (cursor.moveToFirst()) {
-                    output.append("Suppliers: \n" + cursor.getString(cursor.getColumnIndex("company"))+ ": " + s.substring(3, 10));
+                    output.append("Suppliers: \n" + cursor.getString(cursor.getColumnIndex("company"))+ ": " + s.substring(3, 10)+"\n");
                 }
             }
             Log.v(TAG, "nice" + output);

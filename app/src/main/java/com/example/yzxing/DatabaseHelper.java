@@ -58,11 +58,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         supplier.add("Use By Date: May 28, 2019");
         supplier.add("Batch/ Lot No - Case: 354671 / 807");
         String suppliers = gson.toJson(supplier);
-        Log.v(TAG, suppliers+"faffafasfasffas");
         values.put("data", suppliers);
         values.put("barcode", "1807");
         values.put("supplier", dataBarcode);
         db.insert("Lettuce", null, values);
+
+        supplier.clear();
+        supplier.add("Name: Uniti Hearts of Romaine");
+        supplier.add("Gross Count: 12 Count");
+        supplier.add("Pack Date: May 18, 2019");
+        String suppliers2 = gson.toJson(supplier);
+        values.put("data", suppliers2);
+        values.put("barcode", "3019");
+        values.put("supplier", dataBarcode);
+        db.insert("FreshCut", null, values);
     }
 
     @Override
