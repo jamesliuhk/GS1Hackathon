@@ -8,12 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity_Producer_AddDetail extends AppCompatActivity {
 
     private Button add;
     private EditText editText;
 
     private  String detail;
+    private String lastCode;
+    private  ArrayList<String> codeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,12 @@ public class MainActivity_Producer_AddDetail extends AppCompatActivity {
 
 
 
+        // from Producer to here
+        Intent fromProducer = getIntent();
+        //Todo: you can get date form previous activity at here
+        //codeList = fromProducer.getStringArrayListExtra("codeList");
+        lastCode = null;
+        lastCode = fromProducer.getStringExtra("lastCode");
 
         //back to Producer page and send "Detail" we input
 
@@ -38,15 +48,15 @@ public class MainActivity_Producer_AddDetail extends AppCompatActivity {
                 Intent intentJumpToProducer = new Intent(MainActivity_Producer_AddDetail.this, MainActivity_Producer.class);
 
                 intentJumpToProducer.putExtra("Detail",editText.getText().toString());
+                //intentJumpToProducer.putExtra("codeList",codeList);
+                intentJumpToProducer.putExtra("lastCode",lastCode);
 
                 startActivity(intentJumpToProducer);
             }
         });
 
 
-        // from Producer to here
-        Intent fromProducer = getIntent();
-        //Todo: you can get date form previous activity at here
+
 
 
 

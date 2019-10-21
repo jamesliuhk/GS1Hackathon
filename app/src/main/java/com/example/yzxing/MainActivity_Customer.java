@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -18,6 +19,9 @@ import com.example.qrcode.Constant;
 import com.example.qrcode.ScannerActivity;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 
 public class MainActivity_Customer extends AppCompatActivity {
@@ -26,6 +30,7 @@ public class MainActivity_Customer extends AppCompatActivity {
     private final int RESULT_REQUEST_CODE = 1;
     private static final String TAG = "MainActivity_Customer";
     ArrayList<String > codeList;
+    ArrayList<String > showList;
     ListView listView;
     MyAdapter myAdapter;
 
@@ -39,18 +44,22 @@ public class MainActivity_Customer extends AppCompatActivity {
         Button mScanner = (Button) findViewById(R.id.scanner);
 
         codeList = new ArrayList<>();
+        showList = new ArrayList<>();
         mScanner.setOnClickListener(mScannerListener);
+
+
+        myAdapter = new MyAdapter(MainActivity_Customer.this, showList);
+        //绑定listView控件
+        listView = (ListView)findViewById(R.id.codeList);
+        //绑定自定义适配器到listView
+        listView.setAdapter(myAdapter);
 
         // from ChooseModePage to here
         Intent fromChooseModePage = getIntent();
         //Todo: you can get date form previous activity at here
 
 
-        myAdapter = new MyAdapter(MainActivity_Customer.this, codeList);
-        //绑定listView控件
-        listView = (ListView)findViewById(R.id.codeList);
-        //绑定自定义适配器到listView
-        listView.setAdapter(myAdapter);
+
 
     }
 
@@ -89,14 +98,21 @@ public class MainActivity_Customer extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        DBOperation db = new DBOperation(this);
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case RESULT_REQUEST_CODE:
                     if (data == null) return;
                     String type = data.getStringExtra(Constant.EXTRA_RESULT_CODE_TYPE);
                     String content = data.getStringExtra(Constant.EXTRA_RESULT_CONTENT);
+                    List<String>[] res = db.getTrace(content);
 
                     codeList.add(content);
+                    showList.add("Upstream:");
+                    showList .addAll(res[0]);
+
+                    showList.add("Detail:");
+                    showList.addAll(res[1]);
                     //textView.setText(content);
                     listView.setAdapter(myAdapter);
 

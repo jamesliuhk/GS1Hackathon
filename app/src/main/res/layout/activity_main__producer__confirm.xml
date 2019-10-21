@@ -4,32 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_Producer_Confirm">
+    tools:context="com.example.yzxing.MainActivity_Producer_Confirm">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty" />
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="345dp">
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="127dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="44dp"
+        android:text="confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.979" />
 
-        </ListView>
+    <TextView
+        android:id="@+id/infomationreview"
+        android:layout_width="302dp"
+        android:layout_height="226dp"
+        android:background="#EAEEF1"
+        android:shadowColor="#00BCD4"
+        android:text="InfomationReview"
+        android:textColor="#0C0B0B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="147dp"
-            android:text="TextView" />
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="300dp"
+        android:layout_height="129dp"
+        android:background="#EDF5F8"
+        android:text="CheckedTextView"
+        android:textColorHighlight="#00DB9D9D"
+        app:layout_constraintBottom_toTopOf="@+id/infomationreview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89" />
 
-        <Button
-            android:id="@+id/confirm"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:text="Confirm" />
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
